@@ -1,0 +1,109 @@
+@charset "UTF-8";
+body {
+	width: 100%;
+	margin: 0;
+	height: 100vh;
+	overflow:hidden;
+	background-size: cover;
+}
+
+.homePage {
+	width: 100%;
+	height: 100%;
+	background: url("/bibliotecaWeb/WebContent/image/login.jpg") no-repeat
+		center center fixed;
+	background-size: cover;
+	position: relative;
+}
+
+.immagineSocial{
+text-align:right;
+    
+}
+mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.contenitoreAvatar {
+	width: 100%;
+	text-align: center;
+}
+
+.avatar {
+	vertical-align: middle;
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+}
+
+.login {
+	border-radius: 3%;
+	width: 650px;
+	height: 640px!important;
+	position: relative;
+	margin: auto;
+	top: 18px; padding : 25px !important;
+	background-color: #ffffff;
+	padding: 25px !important;
+}
+.buttonRegistrati{
+	background-color:#15B3BE;
+	color:white;
+}
+
+.contenitore {
+	width: 100%;
+	height: 100%;
+	background: url(${pageContext.request.contextPath}/resources/IMG/prova2biblio.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+.navbar-brand {
+	height: 75px;
+	line-height: 60px!important;
+}
+
+.stileBottoni{
+	width: 100px;
+    font-size: 20px;
+	
+}
+.footer{
+	  position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #26A645;
+   color: white;
+   text-align: center;
+   height:75px;
+     margin-top: 48px;
+    margin-bottom: 0rem;
+    text-align: left;
+    font-size: 15px;
+	
+}
+.scrittaFooter{
+	margin-top: 9px;
+	font-size:15px;
+}
+
+
+.navbar-nav>li>a {
+	height: 80px;
+	line-height: 60px!important;
+}
+
+.nav-link{
+	color:white!important;
+}
+
+#img_logo {
+	max-width: 200px;
+	max-height: 200px;
+	margin: 0 auto;
+}
+
+#login-modal .modal-dialog {
+	width: 300px;
+}

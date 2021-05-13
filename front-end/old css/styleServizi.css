@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+	margin: 0;
+	height: 100vh;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.carousel-inner>.carousel-item {
+	min-height: 750px;
+	background-size: cover;
+	background-position: center;
+}
+
+.scrittaFooter {
+	margin-top: 9px;
+	font-size: 15px;
+}
+.navbar-brand {
+	height: 75px;
+	line-height: 60px;
+}
+
+.immagineSocial {
+	text-align: right;
+}
+
+.login {
+	border-radius: 3%;
+	width: 500px;
+	height: 400px;
+	position: fixed;
+	margin: auto;
+	top: 100px;
+	padding: 25px !important;
+	background-color: #ffffff;
+	padding: 25px !important;
+}
+
+.contenitoreAvatar {
+	width: 100%;
+	text-align: center;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #26A645;
+	color: white;
+	text-align: center;
+	height: 75px;
+	margin-top: 48px;
+	margin-bottom: 0rem;
+	text-align: left;
+	font-size: 15px;
+}
+
+.navbar-nav>li>a {
+	height: 80px;
+	line-height: 60px;
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.stileBottoni {
+	width: 100px;
+	font-size: 20px;
+}
+
+.titolo {
+	font-size: 1.75rem;
+	color: #26A645;
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 27.2;
+}
