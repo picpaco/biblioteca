@@ -1,3 +1,5 @@
 # Specifiche
 
-specifiche front-end
+## Tecnologie utiizzate
+
+HTML, CSS, Bootstrap, Angular, TypeScript, Token Security
