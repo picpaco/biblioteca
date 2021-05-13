@@ -2,4 +2,4 @@
 
 ## Tecnologie utilizzate
 
-HTML, CSS, Bootstrap, Angular, TypeScript, Token Security
+HTML, CSS, Bootstrap, Angular, TypeScript, Token Security.
