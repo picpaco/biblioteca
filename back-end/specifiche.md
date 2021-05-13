@@ -1,3 +1,6 @@
 # Specifiche
 
-specifiche back-end
+## Tecnologie utilizzate
+
+Java, Spring(REST, Security), Hibernate, MariaDb, 
+
