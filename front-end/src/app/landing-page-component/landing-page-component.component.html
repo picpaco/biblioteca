@@ -1,0 +1,72 @@
+<div class="contenitore">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: #26a645; height: 75px">
+        <div class="container">
+            <a class="navbar-brand" href="index"><img class="img-responsive" src="assets/icon/bib_logo_w.png" height="80" width="80" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item active">
+                        <a class="nav-link stileBottoni" href="index"><b>Home</b> <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link stileBottoni" href="servizi"><b>Servizi</b><span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link stileBottoni" href="login"><b>Login</b><span class="sr-only"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+<!-- <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="First slide">
+        </div>
+
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Second slide">
+        </div>
+
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Third slide">
+        </div>
+
+    </ng-template>
+</ngb-carousel> -->
+
+
+
+
+<ngb-carousel>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="assets/img-01.jpeg" alt="Angular Carousel 1">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title Goes Here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="assets/img-02.jpeg" alt="Angular Carousel 2">
+        </div>
+        <div class="carousel-caption">
+            <h3>Title Goes Here</h3>
+            <p>Consectetur tortor volutpat pretium.</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
