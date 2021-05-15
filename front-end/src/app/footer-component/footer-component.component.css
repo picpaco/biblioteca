@@ -7,18 +7,32 @@
     text-align: center;
     background: #26a645;
     padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
 }
 
 img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+}
+
+img:hover {
+    width: 49px;
+    height: 49px;
 }
 
 .socialIconRaf {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
 
 a {
     padding: 10px;
+}
+
+.scritte {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }

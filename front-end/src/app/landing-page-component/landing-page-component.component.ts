@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-landing-page-component',
   templateUrl: './landing-page-component.component.html',
@@ -8,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponentComponent implements OnInit {
 
-images = ['listaLibri.jpg', 'slide.jpg', 'rimozioneLibri.jpg'].map((n) => `assets/old-images/${n}`);
 
-  constructor() {
-  }
+
+constructor() {
+}
 
   ngOnInit(): void {
   }

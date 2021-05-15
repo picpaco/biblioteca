@@ -1,28 +1,22 @@
-<div class="topnav" id="myTopnav">
-    <a><img class="img-responsive" src="assets/icon/bib_logo_w.png" height="80" width="80" /> </a>
-    <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#login">login</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbarmia">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="#" class="navbar-brand">
+        <img src="assets/icon/bib_logo_w.png" height="70" alt="CoolBrand">
+    </a>
+
+    <div class="collapse navbar-collapse font2" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li role="presentation" class="nav-item">
+                <a routerLink="/homepage" class="nav-link">Home</a>
+            </li>
+            <li role="presentation" class="nav-item">
+                <a routerLink="/visualizzaLista" class="nav-link">Libri</a>
+            </li>
+            <li role="presentation" class="nav-item">
+                <a routerLink="/accesso" class="nav-link">Login</a>
+            </li>
+        </ul>
     </div>
-
-</div>
-
-<div style="padding-left:16px">
-    <h2>menu 2</h2>
-    <p>ciao</p>
-</div>
-
-<script>
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
-    }
-</script>
+</nav>
