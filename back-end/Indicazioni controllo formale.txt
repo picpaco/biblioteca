@@ -1,0 +1,7 @@
+INDICAZIONI CONTROLLO FORMALE CAMPI:
+
+EMAIL: forma email classica;
+PASSWORD: campo obbligatorio di 8 caratteri, con almeno una lettera maiuscola, una minuscola e un carattere speciale tra (@*#&!?);
+CODICE LIBRO: campo obbligatorio di 5 o 7 caratteri;
+TITOLO LIBRO: campo obbligatorio;
+AUTORE LIBRO: campo obbligatorio;
