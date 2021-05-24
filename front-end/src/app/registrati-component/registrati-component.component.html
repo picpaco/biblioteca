@@ -1,0 +1,54 @@
+<div class="contenitoreForm">
+    <div class="immagine"><img src="assets/icon/User.png" alt=""></div>
+
+    <form [formGroup]="loginform" class="form">
+
+        <!--Nome-->
+        <div class="classeInput">
+            <h5>Nome</h5>
+            <input type="text" placeholder="Nome" maxlength="20" formControlName="nome" [(ngModel)]="user.name" [(ngModel)]="nome2">
+            <span class="error" style="color:red " *ngIf="nome.invalid && nome.touched"> Il nome deve avere al massimo 20 caratteri</span>
+        </div>
+
+        <!--E-mail-->
+        <div class="classeInput">
+            <h5>E-mail</h5>
+            <input type="email" placeholder="Inserisci e-mail" formControlName="email" [(ngModel)]="user.email" [(ngModel)]="email2">
+            <span class="error" style="color:red; " *ngIf="email.invalid && email.touched"> Errore e-mail</span>
+        </div>
+
+
+        <!--Password-->
+        <div class="classeInput">
+            <h5>Password</h5>
+            <input type="password" placeholder="••••••••••••••••" maxlength="8" formControlName="password" [(ngModel)]="user.password" [(ngModel)]="password2">
+            <span class="error" style="color:red " *ngIf="password.invalid && password.touched"> La password deve avere 8 caratteri</span>
+        </div>
+
+
+        <!--messaggio controllo campi vuoti-->
+        <div *ngIf="campivuoti; else showMsg2"></div>
+
+        <ng-template #showMsg2>
+            <h5 style="color: red; margin-top:-10px ">Inserisci tutti i campi</h5>
+        </ng-template>
+        <!--fine messaggio controllo campi vuoti-->
+
+        <!--messaggio registrazione-->
+        <div *ngIf="registrazzioneAvvenuta; else showMsg3">
+
+        </div>
+
+        <ng-template #showMsg3>
+            <h5 style="color: blue; margin-top:-10px ">
+                {{message}}
+            </h5>
+            <a [routerLink]="['/login3']"> Vai alla login</a>
+        </ng-template>
+        <!--fine messaggio controllo campi vuoti-->
+
+
+        <button type="submit " (click)="verificaCampi()">Registrati</button>
+    </form>
+
+</div>

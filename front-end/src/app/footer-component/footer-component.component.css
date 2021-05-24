@@ -36,3 +36,41 @@ a {
     flex-direction: column;
     text-align: left;
 }
+
+@media only screen and (max-width: 900px) {
+    .footer2 {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        background: #26a645;
+        padding-top: 5px;
+        display: flex;
+        justify-content: space-around;
+    }
+    img {
+        width: 30px;
+        height: 30px;
+    }
+    img:hover {
+        width: 32px;
+        height: 32px;
+    }
+    .socialIconRaf {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    a {
+        padding: 10px;
+    }
+    .scritte h6 {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+}

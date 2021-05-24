@@ -1,59 +1,76 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppComponent } from './app.component';
-import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
-import { HomePageComponentComponent } from './home-page-component/home-page-component.component';
-import { LoginComponentComponent } from './login-component/login-component.component';
-import { FooterComponentComponent } from './footer-component/footer-component.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MenuDueComponentComponent } from './menu-due-component/menu-due-component.component';
-import { RegistrazioneComponentComponent } from './registrazione-component/registrazione-component.component';
-import { AggiuntaLibriComponentComponent } from './aggiunta-libri-component/aggiunta-libri-component.component';
-import { RimozioneCopiaComponentComponent } from './rimozione-copia-component/rimozione-copia-component.component';
-import { ListaLibriComponentComponent } from './lista-libri-component/lista-libri-component.component';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+
+import { SerachDeleteComponent } from './serach-delete/serach-delete.component';
+import { UserRegistationService } from './user-registation.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ListaUtentiComponentComponent } from './lista-utenti-component/lista-utenti-component.component';
-import { ProfiloUtenteComponentComponent } from './profilo-utente-component/profilo-utente-component.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { NavabardueComponentComponent } from './navabardue-component/navabardue-component.component';
+import { CaroselloComponentComponent } from './carosello-component/carosello-component.component';
+import { HomepageComponentComponent } from './Homepage-component/homepage-component.component';
+import { RegistratiComponentComponent } from './registrati-component/registrati-component.component';
+import { TabellaListaLibriComponentComponent } from './tabellaListaLibri-component/tabellaListaLibri-component.component';
+import { AggiungiLibroComponentComponent } from './aggiungiLibro-component/aggiungiLibro-component.component';
+import { RimuoviLibroComponentComponent } from './rimuoviLibro-component/rimuoviLibro-component.component';
+import { Login3ComponentComponent } from './login3-component/login3-component.component';
+import { ListaUtentiComponentComponent } from './listaUtenti-component/listaUtenti-component.component';
+import { LogoutComponentComponent } from './logout-component/logout-component.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
+import { NavabardueComponentComponent } from './navabardue-component/navabardue-component.component';
+import { ProfiloUtenteComponentComponent } from './profiloUtente-component/profiloUtente-component.component';
+import { RouterModule } from '@angular/router';
+
+
+
+
 
 const appRoutes = [
-  { path: '', component: LandingPageComponentComponent},
-  { path: 'accesso', component: LoginComponentComponent},
-  { path: 'registrazione', component: RegistrazioneComponentComponent},
-  { path: 'aggiuntaLibro', component: AggiuntaLibriComponentComponent},
-  { path: 'visualizzaLista', component: ListaLibriComponentComponent},
-  { path: 'rimozioneLibro', component: RimozioneCopiaComponentComponent},
-  { path: 'homepage', component: HomePageComponentComponent},
-  { path: 'listaUtenti', component: ListaUtentiComponentComponent},
-  { path: 'profiloUtente', component: ProfiloUtenteComponentComponent}
-]
+  { path: '', component: CaroselloComponentComponent },
+  { path: 'biblioteca', component: HomepageComponentComponent },
+  { path: 'registrazione', component: RegistratiComponentComponent },
+  { path: 'listaLibri', component: TabellaListaLibriComponentComponent },
+  { path: 'aggiungiLibro', component: AggiungiLibroComponentComponent },
+  { path: 'rimuoviLibro', component: RimuoviLibroComponentComponent },
+  { path: 'login3', component: Login3ComponentComponent },
+  { path: 'utenti', component: ListaUtentiComponentComponent },
+  { path: 'logout', component: LogoutComponentComponent },
+  { path: '*', component: CaroselloComponentComponent }
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponentComponent,
-    HomePageComponentComponent,
-    LoginComponentComponent,
+
+    SerachDeleteComponent,
+
     FooterComponentComponent,
-    MenuDueComponentComponent,
-    RegistrazioneComponentComponent,
-    AggiuntaLibriComponentComponent,
-    RimozioneCopiaComponentComponent,
-    ListaLibriComponentComponent,
-    
-  ],
+    LandingPageComponentComponent,
+    CaroselloComponentComponent,
+    NavabardueComponentComponent,
+    HomepageComponentComponent,
+    TabellaListaLibriComponentComponent,
+    RegistratiComponentComponent,
+    AggiungiLibroComponentComponent,
+    RimuoviLibroComponentComponent,
+    ProfiloUtenteComponentComponent,
+    Login3ComponentComponent,
+    ListaUtentiComponentComponent,
+      LogoutComponentComponent
+
+   ],
   imports: [
-    BrowserModule,
-    NgbModule,
-    BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
+
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UserRegistationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
