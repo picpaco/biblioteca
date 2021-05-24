@@ -1,0 +1,139 @@
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+
+.immagine {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.contenitoreForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 100%;
+}
+
+input {
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    border-radius: 100px;
+    border: 2px solid#26a645;
+    background-color: white;
+    color: black;
+}
+
+.classeInput {
+    padding-bottom: 5%;
+}
+
+h5 {
+    color: black;
+    text-align: center;
+    padding: 2%;
+}
+
+:focus {
+    outline: 0 !important;
+}
+
+input:hover {
+    border-color: #26a645;
+    border-radius: 100px;
+    background-color: #26a6466b;
+}
+
+button {
+    margin-top: 30px;
+    background-color: #26a645;
+    border: 0px solid;
+    height: 40px;
+    border-radius: 100px;
+    color: white;
+}
+
+a {
+    text-align: center;
+}
+
+button:hover {
+    background-color: white;
+    color: #26a645;
+    border: 1px solid #26a645;
+}
+
+@media screen and (max-width: 900px) {
+    .contenitoreForm {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        margin-left: 0%;
+        margin-right: 0%
+    }
+    button {
+        margin-top: 30px;
+        background-color: #26a645;
+        border: 0px solid;
+        height: 40px;
+        border-radius: 100px;
+        color: white;
+        width: 100%;
+    }
+    input {
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        border-radius: 100px;
+        border: 2px solid#26a645;
+        background-color: white;
+        color: black;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 300px;
+    }
+    .immagine {
+        display: flex;
+        justify-content: center;
+    }
+    img {
+        height: 130px;
+        width: 130px;
+    }
+    .classeInput {
+        padding-bottom: 5%;
+    }
+    h5 {
+        color: black;
+        text-align: center;
+        padding: 2%;
+    }
+    input:hover {
+        border-color: #26a645;
+        border-radius: 100px;
+    }
+    button:hover {
+        background-color: white;
+        color: #26a645;
+        border: 1px solid #26a645;
+    }
+}

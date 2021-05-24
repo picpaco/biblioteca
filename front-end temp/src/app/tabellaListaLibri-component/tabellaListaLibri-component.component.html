@@ -1,0 +1,25 @@
+<h1>LISTA LIBRI</h1>
+<table id="articoli" class="tabella">
+    <thead>
+        <tr>
+            <th>Codice</th>
+            <th>Titolo</th>
+            <th>Autore</th>
+            <th>Numero Copie</th>
+            <th>Gestione</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let libro of libri">
+            <td>{{libro.Codice}}</td>
+            <td>{{libro.Titolo}}</td>
+            <td>{{libro.Autore}}</td>
+            <td>{{libro.NumeroCopie}}</td>
+            <td>
+                <button class="pulsanti" id="modifica" type="button" class="btn btn-success">Modifica</button>
+                <button class="pulsanti" id="elimina" type="button" class="btn btn-danger" [routerLink]="['/rimuoviLibro']">Elimina</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
