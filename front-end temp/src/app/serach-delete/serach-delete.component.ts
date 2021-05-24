@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserRegistationService } from '../user-registation.service';
+import { UserService } from '../user-service';
 
 @Component({
   selector: 'app-serach-delete',
@@ -11,10 +11,10 @@ export class SerachDeleteComponent implements OnInit {
   users:any;
   email:string;
   
-  constructor(private service:UserRegistationService) { }
+  constructor(private service:UserService) { }
 
 
-public delteUser(id:number){
+/*public delteUser(id:number){
  let resp= this.service.deleteUser(id);
  resp.subscribe((data)=>this.users=data);
 }
@@ -22,7 +22,7 @@ public delteUser(id:number){
 public findUserByEmailId(){
   let resp= this.service.getUserByEmail(this.email);
   resp.subscribe((data)=>this.users=data);
- }
+ }*/
 
   ngOnInit() {
     let resp=this.service.getUsers();

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { SerachDeleteComponent } from './serach-delete/serach-delete.component';
-import { UserRegistationService } from './user-registation.service';
+import { UserService } from './user-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { NavabardueComponentComponent } from './navabardue-component/navabardue-component.component';
@@ -22,7 +22,7 @@ import { LandingPageComponentComponent } from './landing-page-component/landing-
 import { NavabardueComponentComponent } from './navabardue-component/navabardue-component.component';
 import { ProfiloUtenteComponentComponent } from './profiloUtente-component/profiloUtente-component.component';
 import { RouterModule } from '@angular/router';
-import { authInterceptorProviders } from './_helpers/out.interceptor';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 
 
@@ -71,7 +71,7 @@ const appRoutes = [
 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserRegistationService, authInterceptorProviders],
+  providers: [UserService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+/*import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { element } from 'protractor';
 import { Observable } from 'rxjs';
@@ -20,11 +20,11 @@ constructor(private http:HttpClient) { }
     return this.http.get("http://localhost:8080/autorizzazione/listaUtenti");
   }
 
-  public login()
+ 
 
-  /*public deleteUser(id){
+  public deleteUser(id){
     return this.http.delete("http://localhost:9090/cancellaUtente/"+id);
-  }*/
+  }
 
 
 
@@ -82,6 +82,6 @@ restituisceBooleanoSeUtenteEloggato(){
 }
 
 }
-
+*/
 
 

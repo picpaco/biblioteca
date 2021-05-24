@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
+import { AuthService } from '../ServiziAngular/auth.service';
+import { UserService } from '../user-service';
+//import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
 
 @Component({
   selector: 'app-listaUtenti-component',
@@ -8,7 +10,8 @@ import { RegistrazioneService } from '../ServiziAngular/registrazioneService/reg
 })
 export class ListaUtentiComponentComponent implements OnInit {
   arrayUtenti:any;
-  constructor(private ServizioRegistrati:RegistrazioneService) { }
+  constructor(private ServizioRegistrati:UserService) 
+    { }
 
   ngOnInit() {
     //visualizza gli utenti nel db
@@ -16,10 +19,10 @@ export class ListaUtentiComponentComponent implements OnInit {
     resp.subscribe((data)=>this.arrayUtenti=data);
   }
 
-  public deleteUser(id){
+  /*public deleteUser(id){
     let resp= this.ServizioRegistrati.deleteUser(id);
     resp.subscribe((data)=>this.arrayUtenti=data);
-   }
+   }*/
 
 
 

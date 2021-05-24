@@ -5,6 +5,7 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
+            <th>Cognome</th>
             <th>E-mail</th>
             <th>Password</th>
             <th>Gestisci</th>
@@ -15,6 +16,7 @@
         <tr *ngFor="let utente of arrayUtenti">
             <td>{{utente.id}}</td>
             <td>{{utente.name}}</td>
+            <td>{{utente.cognome}}</td>
             <td>{{utente.email}}</td>
             <td>{{utente.password}}</td>
             <td class="text-center">

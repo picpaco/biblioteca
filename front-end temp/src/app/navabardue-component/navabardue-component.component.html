@@ -15,7 +15,7 @@
     <a [routerLink]="['/utenti']" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Utenti</a>
     <a id="logout" class="" [routerLink]="['/logout']" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Logout</a>
     <!--mostra l'utente-->
-    <a id="utente" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Utente: {{BasicAuth.restituisceNomeUtenteLoggato()}}</a>
+    <!--<a id="utente" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Utente: {{BasicAuth.restituisceNomeUtenteLoggato()}}</a>-->
     <!--fine-->
 
     <!-- claudio

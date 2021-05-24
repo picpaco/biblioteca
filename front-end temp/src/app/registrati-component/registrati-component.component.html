@@ -10,6 +10,13 @@
             <span class="error" style="color:red " *ngIf="nome.invalid && nome.touched"> Il nome deve avere al massimo 20 caratteri</span>
         </div>
 
+        <!--Cognome-->
+        <div class="classeInput">
+            <h5>Cognome</h5>
+            <input type="text" placeholder="Cognome" maxlength="20" formControlName="cognome" [(ngModel)]="user.cognome" [(ngModel)]="cognome2">
+            <span class="error" style="color:red " *ngIf="cognome.invalid && cognome.touched"> Il cognome deve avere al massimo 20 caratteri</span>
+        </div>
+
         <!--E-mail-->
         <div class="classeInput">
             <h5>E-mail</h5>
@@ -27,15 +34,15 @@
 
 
         <!--messaggio controllo campi vuoti-->
-        <div *ngIf="campivuoti; else showMsg2"></div>
+        <!--<div *ngIf="campivuoti; else showMsg2"></div>
 
         <ng-template #showMsg2>
             <h5 style="color: red; margin-top:-10px ">Inserisci tutti i campi</h5>
-        </ng-template>
+        </ng-template> -->
         <!--fine messaggio controllo campi vuoti-->
 
         <!--messaggio registrazione-->
-        <div *ngIf="registrazzioneAvvenuta; else showMsg3">
+       <!-- <div *ngIf="registrazzioneAvvenuta; else showMsg3">
 
         </div>
 
@@ -44,7 +51,8 @@
                 {{message}}
             </h5>
             <a [routerLink]="['/login3']"> Vai alla login</a>
-        </ng-template>
+        </ng-template>-->
+    
         <!--fine messaggio controllo campi vuoti-->
 
 

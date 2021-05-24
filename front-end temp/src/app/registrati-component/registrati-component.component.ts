@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
+//import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
 import { Utenti } from '../utenti';
 //import { Utenti } from './utenti';
 //import { User } from './utenti';
@@ -19,11 +19,12 @@ registrazzioneAvvenuta=true;
 pulsante=true;
 
   nome2: string = '';
+  cognome2: string = '';
   email2: string ='';
   password2: string ='';
 
 //--------------------------------------------------------------
-  user: Utenti=new Utenti("", "", "");
+  user: Utenti=new Utenti("", "", "", "");
 
   message:any;
 
@@ -32,9 +33,11 @@ loginform= new FormGroup({
   email: new FormControl('', [Validators.required, Validators.email]),
   password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]),
   nome: new FormControl('', [Validators.required, Validators.maxLength(20)]),
+  cognome: new FormControl('', [Validators.required, Validators.maxLength(20)]),
 })
 
 get nome(){return this.loginform.get('nome')}
+get cognome(){return this.loginform.get('cognome')}
 get email(){return this.loginform.get('email')}
 get password(){return this.loginform.get('password')}
 
@@ -45,8 +48,10 @@ get password(){return this.loginform.get('password')}
 //per usare le rotte, in ingresso al costruttore creiamo la variabile router di tipo Router
 //per usare il servizi, in ingresso al costruttore creiamo una variabile e gli assegnamo il nome della classe del servizio
 //ricordare di aggiungere gli import
-constructor( private router: Router, private ServizioRegistrazione:RegistrazioneService) {
-  }
+constructor( private router: Router
+  //private ServizioRegistrazione:RegistrazioneService
+  ) {}
+  
 
 
   ngOnInit() {
@@ -56,7 +61,7 @@ constructor( private router: Router, private ServizioRegistrazione:Registrazione
 
 //controllo credenzilai
 //public registerNow()
-public verificaCampi(){
+/*public verificaCampi(){
   if (this.ServizioRegistrazione.verificaNome(this.nome2) &&
       this.ServizioRegistrazione.varicaCampiVuoti(this.nome2, this.email2, this.password2)
   ){
@@ -66,6 +71,7 @@ public verificaCampi(){
     this.campivuoti=true;
     this.pulsante=false;
     return this.registrazzioneAvvenuta=false;
+    
 //this.router.navigate(['/login3'])
 
 
@@ -73,7 +79,7 @@ public verificaCampi(){
   }else{
  this.campivuoti=false;
   }
-}
+}*/
 
 
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router"
 import { LoginServiceService } from '../ServiziAngular/loginService/loginService.service';
-import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
+import { UserService } from '../user-service';
 
 @Component({
   selector: 'app-login3-component',
@@ -25,7 +25,7 @@ get password(){return this.loginform.get('password')}
 //per usare le rotte, in ingresso al costruttore creiamo la variabile router di tipo Router
 //per usare il servizi, in ingresso al costruttore creiamo una variabile e gli assegnamo il nome della classe del servizio
 //ricordare di aggiungere gli import
-constructor( private router: Router, private ServizioLogin:LoginServiceService, private ServizioRegistrazione:RegistrazioneService, ) {
+constructor( private router: Router, private ServizioLogin:LoginServiceService, private ServizioRegistrazione:UserService, ) {
 
   }
 arrayUtenti:any;
@@ -44,7 +44,7 @@ arrayUtenti:any;
 
   verifica: boolean = false;
 //verifica se registrato
- public verificaSeRegistrato(){
+ /*public verificaSeRegistrato(){
  console.log(this.ServizioRegistrazione.utentiRegistrati(this.email2, this.password2));
   this.arrayUtenti.forEach(
     elemento =>{
@@ -64,12 +64,12 @@ arrayUtenti:any;
     this.campivuoti=true;
     this.erroreCredenziali=false;
      return  this.router.navigate(['/login3']);
-   }
+   }*/
 
 
  }
 
 
-}
+
 
 
