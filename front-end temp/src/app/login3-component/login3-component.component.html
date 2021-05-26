@@ -2,41 +2,32 @@
     <div class="immagine"><img src="assets/icon/logoLibroTrasparente.png" alt=""></div>
 
     <!--E-mail-->
-    <form [formGroup]="loginform" class="form">
-        <div class="classeInput ">
-            <h5>E-mail</h5>
-            <input type="email" placeholder="Inserisci e-mail " formControlName="email" [(ngModel)]="email2">
-            <span class="error" style="color:red; " *ngIf="email.invalid && email.touched"> Errore e-mail</span>
+    <form *ngIf="!isUtenteConnesso" name=form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" />
+            <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+                L'E-Mail è obbligatoria
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="8" #password="ngModel" />
+            <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">La password è obbligatoria</div>
+                <div *ngIf="password.errors.minlength">
+                    La password deve essere esattamente di 8 caratteri
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block">Login</button>
+        </div>
+        <div class="form-group">
+            <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFallito">Login Fallito: {{errorMessage}}</div>
         </div>
 
-
-
-        <!--Password-->
-        <div class="classeInput ">
-            <h5>Password</h5>
-            <input type="password" placeholder="•••••••••••••••• " maxlength="8" formControlName="password" [(ngModel)]="password2">
-            <span class="error" style="color:red" *ngIf="password.invalid && password.touched"> La password deve avere 8 caratteri</span>
-        </div>
-
-
-        <!--messaggio controllo campi vuoti-->
-        <div *ngIf="campivuoti; else showMsg2 "></div>
-
-        <ng-template #showMsg2>
-            <h5 style="color: red; margin-top:-10px">Inserisci e mail e password</h5>
-        </ng-template>
-        <!--fine messaggio controllo campi vuoti-->
-
-        <!--messaggio controllo credenziali-->
-        <div *ngIf="erroreCredenziali; else showMsg3 "></div>
-
-        <ng-template #showMsg3>
-            <h5 style="color: red; margin-top:-10px ">Errore credenziali</h5>
-        </ng-template>
-
-        <!--fine messaggio controllo credenziali  (click)="verificaCredenzialiServizi()""    -->
-        <button type="submit " (click)="verificaSeRegistrato()">Login</button>
-        <button type="submit " [routerLink]="[ '/registrazione'] ">Registrati</button>
     </form>
+    <div class="alert alert-success" *ngIf="isUtenteConnesso">Utente connesso come: {{roles}}</div>
 
 </div>

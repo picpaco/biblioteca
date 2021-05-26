@@ -1,37 +1,60 @@
+<!--<div id="app">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Navbar prova</a>
+        <ul class="navbar-nav mr-auto" routerLinkActive="active">
+            <li class="nav-item">
+                <a href="/" class="nav-link" routerLink="">Home </a>
+            </li>
+            <li class="nav-item" *ngIf="showAdminBoard">
+                <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+            </li>
+            <li class="nav-item" *ngIf="showUserBoard">
+                <a href="/user" class="nav-link" routerLink="mod">User Board</a>
+            </li>
+            <li class="nav-item">
+                <a href="/user" class="nav-link" *ngIf="isUtenteConnesso" routerLink="user">User</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto" *ngIf="!isUtenteConnesso">
+            <li class="nav-item">
+                <a href="/registrazione" class="nav-link" routerLink="registrazione">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a href="/login3" class="nav-link" routerLink="login3">Login</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto" *ngIf="isUtenteConnesso">
+            <li class="nav-item">
+                <a href="/profile" class="nav-link" routerLink="profile">{{ email }}</a>
+            </li>
+            <li class="nav-item">
+                <a href class="nav-link" (click)="logout()">LogOut</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>-->
+
 <div class="topnav" id="myTopnav">
     <a style="background-color: #212529;"><img src="assets/icon/bib_logo_w.png" height="87" alt="logo" style="margin-left: 30px;"></a>
-    <!--attivato sempre-->
     <a [routerLink]="['/']" class="active">Home</a>
-    <!--fine-->
 
-    <!--Disattivati se loggati-->
-    <a [routerLink]="['/login3']" class="" *ngIf="!BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Login3</a>
-    <a [routerLink]="['/registrazione']" class="" *ngIf="!BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Registrati</a>
-    <!--fine-->
+    <a href="/login3" class="" *ngIf="!isUtenteConnesso" onclick="">Login</a>
+    <a [routerLink]="['/registrazione']" class="" href="" *ngIf="!isUtenteConnesso" onclick="">Registrati</a>
 
-    <!--Attivi se loggati-->
+    <a class="" [routerLink]="['/biblioteca']" href="" *ngIf="isUtenteConnesso" onclick="">Biblioteca</a>
+    <a [routerLink]="['/utenti']" href="" *ngIf="isUtenteConnesso" onclick="">Utenti</a>
+    <a id="logout" class="" *ngIf="isUtenteConnesso" (click)="logout()">Logout</a>
 
-    <a class="" [routerLink]="['/biblioteca']" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Biblioteca</a>
-    <a [routerLink]="['/utenti']" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Utenti</a>
-    <a id="logout" class="" [routerLink]="['/logout']" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Logout</a>
-    <!--mostra l'utente-->
-    <!--<a id="utente" *ngIf="BasicAuth.restituisceBooleanoSeUtenteEloggato()" href="" onclick="">Utente: {{BasicAuth.restituisceNomeUtenteLoggato()}}</a>-->
-    <!--fine-->
-
-    <!-- claudio
-    <a routerLink="{{rout}}" (click)='routeChange()' class=" pageName " ng-bind="$root.name ">{{log}}</a>
-   -->
-
-
-
-    <!--per menu responsive-->
     <a href="javascript:void(0); " class="icon " onclick="myFunction() ">
         <i class="fa fa-bars fa-2x "></i>
     </a>
 </div>
-
-
-
 
 <script>
     function myFunction() {

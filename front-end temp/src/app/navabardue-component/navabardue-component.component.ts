@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from '../ServiziAngular/loginService/loginService.service';
-import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
+//import { LoginServiceService } from '../ServiziAngular/loginService/loginService.service';
+import { TokenStorageService } from '../ServiziAngular/token-storage.service';
+//import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
 
 @Component({
   selector: 'app-navabardue-component',
@@ -9,17 +10,42 @@ import { RegistrazioneService } from '../ServiziAngular/registrazioneService/reg
 })
 export class NavabardueComponentComponent implements OnInit {
 
-  rout ="'login3'";
-  log = "Login";;
+  private roles: string[] = [];
+  isUtenteConnesso = false;
+  showAdminBoard = false;
+  showUserBoard = false;
+  email?: string
 
-  constructor(private ServizioLogin:LoginServiceService, public BasicAuth: RegistrazioneService) { }
+  constructor(/*private ServizioLogin:LoginServiceService,*/ private TokenStorageService: TokenStorageService
 
-  ngOnInit() {
-  }
+    // publicBasicAuth: RegistrazioneService
+
+    ) { }
+
+    ngOnInit(): void{
+      this.isUtenteConnesso = !!this.TokenStorageService.getToken();
+
+      if(this.isUtenteConnesso){
+        const user = this.TokenStorageService.getUser();
+        this.roles = user.roles;
+
+        this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+        this.showUserBoard = this.roles.includes('ROLE_USER');
+
+        this.email = user.email;
+      }
+    }
+
+    logout(): void{
+      console.log("UTENTE"+this.isUtenteConnesso);
+      //this.isUtenteConnesso = true;
+      this.TokenStorageService.signOut();
+      window.location.reload();
+    }
 
   isUserAuthenticated = true;
 
-  public authenticate(){
+  /*public authenticate(){
     this.isUserAuthenticated = false;
     return this.isUserAuthenticated;
   }
@@ -27,19 +53,6 @@ export class NavabardueComponentComponent implements OnInit {
   public deauthenticate(){
     this.isUserAuthenticated = true;
     return this.isUserAuthenticated;
-  }
+  }*/
 
-
-  public routeChange(){
-
-//if(this.ServizioLogin.autenticazione()==true){ }
-if(this.log==="Login"){
-this.log ="Logout";
-this.rout = "'biblioteca'";
-  }
-  else{
-    this.log ="Login";
-    this.rout ="'login3'";
-  }
-  }
 }

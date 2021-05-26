@@ -8,8 +8,6 @@ export class LogoutService {
 constructor() { }
 
 effettuaLogout(){
-  //sessionStorage.clear();
-  sessionStorage.removeItem("Utente");
-  sessionStorage.removeItem("NomeUtente");
+  sessionStorage.clear();
 }
 }

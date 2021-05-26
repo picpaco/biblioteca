@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { enableProdMode, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { SerachDeleteComponent } from './serach-delete/serach-delete.component';
+//import { SerachDeleteComponent } from './serach-delete/serach-delete.component';
 import { UserService } from './user-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { HomepageComponentComponent } from './Homepage-component/homepage-compon
 import { RegistratiComponentComponent } from './registrati-component/registrati-component.component';
 import { TabellaListaLibriComponentComponent } from './tabellaListaLibri-component/tabellaListaLibri-component.component';
 import { AggiungiLibroComponentComponent } from './aggiungiLibro-component/aggiungiLibro-component.component';
-import { RimuoviLibroComponentComponent } from './rimuoviLibro-component/rimuoviLibro-component.component';
+//import { RimuoviLibroComponentComponent } from './rimuoviLibro-component/rimuoviLibro-component.component';
 import { Login3ComponentComponent } from './login3-component/login3-component.component';
 import { ListaUtentiComponentComponent } from './listaUtenti-component/listaUtenti-component.component';
 import { LogoutComponentComponent } from './logout-component/logout-component.component';
@@ -26,7 +26,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 
 
-
+enableProdMode();
 
 const appRoutes = [
   { path: '', component: CaroselloComponentComponent },
@@ -34,7 +34,7 @@ const appRoutes = [
   { path: 'registrazione', component: RegistratiComponentComponent },
   { path: 'listaLibri', component: TabellaListaLibriComponentComponent },
   { path: 'aggiungiLibro', component: AggiungiLibroComponentComponent },
-  { path: 'rimuoviLibro', component: RimuoviLibroComponentComponent },
+  //{ path: 'rimuoviLibro', component: RimuoviLibroComponentComponent },
   { path: 'login3', component: Login3ComponentComponent },
   { path: 'utenti', component: ListaUtentiComponentComponent },
   { path: 'logout', component: LogoutComponentComponent },
@@ -46,7 +46,7 @@ const appRoutes = [
   declarations: [
     AppComponent,
 
-    SerachDeleteComponent,
+   // SerachDeleteComponent,
 
     FooterComponentComponent,
     LandingPageComponentComponent,
@@ -56,12 +56,11 @@ const appRoutes = [
     TabellaListaLibriComponentComponent,
     RegistratiComponentComponent,
     AggiungiLibroComponentComponent,
-    RimuoviLibroComponentComponent,
+    //   RimuoviLibroComponentComponent,
     ProfiloUtenteComponentComponent,
     Login3ComponentComponent,
     ListaUtentiComponentComponent,
-      LogoutComponentComponent
-
+    LogoutComponentComponent
    ],
   imports: [
     FormsModule,

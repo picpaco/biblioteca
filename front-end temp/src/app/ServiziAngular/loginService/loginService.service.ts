@@ -15,12 +15,12 @@ constructor(private http:HttpClient) {
 
  }
 
-verificaSeVuoti(Email, password){
-  if (Email === '' && password === ''){
-    return true;
-  }else{
-    return false;
-  }
-}
+// verificaSeVuoti(Email, password){
+//   if (Email === '' && password === ''){
+//     return true;
+//   }else{
+//     return false;
+//   }
+// }
 
 }

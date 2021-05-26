@@ -17,23 +17,25 @@ restituisceListaLibri(){
   return this.libri;
 }
 
-aggiungiLibro(Codice, titolo, Autore, numeroCopie){
-  this.libri.push({Codice:Codice, Titolo:titolo, Autore:Autore, NumeroCopie:numeroCopie},);
-}
+// aggiungiLibro(string:Codice, string:titolo, string:Autore, numeroCopie){
+//   this.libri.push({Codice:Codice, Titolo:titolo, Autore:Autore, NumeroCopie:numeroCopie},);
+// }
 
 
-rimuoviLibro(Codice){
+// rimuoviLibro(Codice){
 
-  Object.entries(this.libri).forEach(
+//   Object.entries(this.libri).forEach(
 
-      ([key, value]) => {
-                         // console.log(value.Email)
-                          if(value.Codice==Codice){
-                                                    delete this.libri[key];
-                          }
-      }
-  );
+//       ([key, value]) => {
+//                          // console.log(value.Email)
+//                           if(value.Codice==Codice){
+//                                                     delete this.libri[key];
+//                           }
+//       }
+//   );
 
 
-}
+// }
+
+
 }

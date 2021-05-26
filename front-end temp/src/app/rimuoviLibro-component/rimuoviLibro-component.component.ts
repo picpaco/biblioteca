@@ -22,7 +22,7 @@ loginform= new FormGroup({
 get codice(){return this.loginform.get('codice')}
 
 rimuoviLibro(){
-this.ServizioElimina.rimuoviLibro(this.codice2);
+//this.ServizioElimina.rimuoviLibro(this.codice2);
 }
 
 

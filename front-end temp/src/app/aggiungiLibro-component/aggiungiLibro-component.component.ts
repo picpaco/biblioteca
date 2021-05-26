@@ -28,6 +28,6 @@ get titolo(){return this.loginform.get('titolo')}
 get autore(){return this.loginform.get('autore')}
 public aggiungiLibro(){
 
-  this.ServizioAggiungiLibro.aggiungiLibro(this.codice2, this.titolo2, this.autore2, 1);
+ // this.ServizioAggiungiLibro.aggiungiLibro(this.codice2, this.titolo2, this.autore2, 1);
 }
 }

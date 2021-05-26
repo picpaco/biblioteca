@@ -3,6 +3,7 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { Router } from '@angular/router';
 //import { RegistrazioneService } from '../ServiziAngular/registrazioneService/registrazione.service';
 import { Utenti } from '../utenti';
+import { AuthService } from '../ServiziAngular/auth.service';
 //import { Utenti } from './utenti';
 //import { User } from './utenti';
 //import { AuthService } from '../_services/auth.service';
@@ -13,9 +14,45 @@ import { Utenti } from '../utenti';
   styleUrls: ['./registrati-component.component.css']
 })
 export class RegistratiComponentComponent implements OnInit {
+
+  form: any = {
+    nome: null,
+    cognome: null,
+    email: null,
+    password: null
+  };
+
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(): void {
+
+  }
+
+  onSubmit(): void {
+    const {nome, cognome, email, password} = this.form;
+
+    this.authService.register(nome, cognome, email, password).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
+  }
+
+  inserisciUtente(){}
+/*
 //variabili per controllo campi
 campivuoti=true;
-registrazzioneAvvenuta=true;
+registrazioneAvvenuta=true;
 pulsante=true;
 
   nome2: string = '';
@@ -48,10 +85,10 @@ get password(){return this.loginform.get('password')}
 //per usare le rotte, in ingresso al costruttore creiamo la variabile router di tipo Router
 //per usare il servizi, in ingresso al costruttore creiamo una variabile e gli assegnamo il nome della classe del servizio
 //ricordare di aggiungere gli import
-constructor( private router: Router
+constructor( private router: Router, private ServiziAuth :AuthService
   //private ServizioRegistrazione:RegistrazioneService
   ) {}
-  
+
 
 
   ngOnInit() {
@@ -61,35 +98,11 @@ constructor( private router: Router
 
 //controllo credenzilai
 //public registerNow()
-/*public verificaCampi(){
-  if (this.ServizioRegistrazione.verificaNome(this.nome2) &&
-      this.ServizioRegistrazione.varicaCampiVuoti(this.nome2, this.email2, this.password2)
-  ){
-    let resp=this.ServizioRegistrazione.inserisciUtente(this.user);
-    resp.subscribe((data)=>this.message=data);
-
-    this.campivuoti=true;
-    this.pulsante=false;
-    return this.registrazzioneAvvenuta=false;
-    
-//this.router.navigate(['/login3'])
-
-
-
-  }else{
- this.campivuoti=false;
-  }
-}*/
-
-
-
-
+public inserisciUtente(){
+  this.ServiziAuth.register(this.nome2, this.cognome2, this.email2, this.password2);
 }
 
 
 
-
-
-
-
-
+*/
+}
