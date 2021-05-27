@@ -1,0 +1,84 @@
+<!--
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="pagina-principale" class="navbar-brand">Biblioteca</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="pagina-principale" class="nav-link" routerLink="pagina-principale">Pagina Principale </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="admin" class="nav-link" routerLink="admin">Lista Utenti</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="registrazione" class="nav-link" routerLink="registrazione">Registrazione</a>
+      </li>
+      <li class="nav-item">
+        <a href="accesso" class="nav-link" routerLink="accesso">Accesso</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="profilo" class="nav-link" routerLink="profilo">{{ email }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+-->
+
+<div class="topnav" id="myTopnav">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+    <img src="assets/icon/bib_logo_w.png" height="87" alt="logo" style="margin-left: 30px;">
+   </a>
+    
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="pagina-principale" class="nav-link" routerLink="pagina-principale">Home </a>
+      </li>
+    
+
+    
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a href="registrazione" class="nav-link" routerLink="registrazione">Registrazione</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a href="accesso" class="nav-link" routerLink="accesso">Login</a>
+      </li>
+    
+
+    
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="utenti" class="nav-link" routerLink="utenti">Utenti</a>
+      </li>
+      <li class="nav-item"  *ngIf="isLoggedIn">
+        <a href="libri" class="nav-link" routerLink="libri">Biblioteca</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="profilo" class="nav-link" routerLink="profilo">{{ email }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer></app-footer>
+
