@@ -14,6 +14,8 @@ import { BoardUtenteComponent } from './board-utente/board-utente.component';
 
 import { authInterceptorProviders } from './_helpers/autorizzazione.interceptor';
 import { FooterComponent } from './footer/footer.component';
+import { AggiungiLibroComponent } from './aggiungi-libro/aggiungi-libro.component';
+import { RimuoviLibroComponent } from './rimuovi-libro/rimuovi-libro.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FooterComponent } from './footer/footer.component';
     ProfiloComponent,
     BoardAmministratoreComponent,
     BoardUtenteComponent,
-    FooterComponent
+    FooterComponent,
+    AggiungiLibroComponent,
+    RimuoviLibroComponent
   ],
   imports: [
     BrowserModule,

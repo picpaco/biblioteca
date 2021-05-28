@@ -49,18 +49,17 @@ public class BibliotecaController {
 	public ResponseEntity<?> aggiungiCopiaLibro(@RequestBody LibroRequest libro) {
 		String codice = libro.getCodice();
 		Set<Copia> copie = new HashSet<>();
-		Libro lib = new Libro(
-				libro.getCodice(),
-				libro.getTitolo(),
-				libro.getAutore()
-				);
+		Libro lib;
 		if (libroRepository.existsByCodice(libro.getCodice())){
 			//Integer numeroCopie = (libro.getNumeroCopie()+1);
-			//Libro lib = libroRepository.findByCodice(codice).get();
+			lib = libroRepository.findByCodice(codice).get();
 			//copie = libroRepository.copieLibro(codice);
-			copie = libroRepository.copieLibro(codice);
+			copie = lib.getCopie();
+					//libroRepository.copieLibro(codice);
 					//libro.getCopie();
-			Integer numeroCopie = copie.size() + 1;
+			System.out.println("Libro: " + lib);
+			Integer numeroCopie = lib.getNumeroCopie() + 1;
+			System.out.println("Numero copie: " + numeroCopie);
 			String codiceCopia; 
 				if (numeroCopie < 10) {
 					codiceCopia = codice.concat("0").concat(numeroCopie.toString());
@@ -68,29 +67,39 @@ public class BibliotecaController {
 				else {
 					codiceCopia = codice.concat(numeroCopie.toString());
 				}
-			//libro.setNumeroCopie(numeroCopie);
+				System.out.println("Codice copia: " + codiceCopia);
 			
 			Copia copia = new Copia(codiceCopia, lib);
 			copie.add(copia);
-			libro.setCopie(copie);
+			lib.setCopie(copie);
+			lib.setNumeroCopie(numeroCopie);
+			libroRepository.flush();
 			copiaRepository.save(copia);
-			libroRepository.flush();// save(libro);
-			//libroRepository.save(libro);
-			return ResponseEntity.ok(new MessageResponse("Libro esistente, aggiunta una copia: " + libro + ", " + copia));
+			
+			//libroRepository.save(lib);
+			return ResponseEntity.ok(new MessageResponse("Libro esistente, aggiunta una copia: " + lib + ", " + copia));
 		}
 		else {
-			
+			 lib = new Libro(
+						libro.getCodice(),
+						libro.getTitolo(),
+						libro.getAutore()
+						);
 			Copia copia = new Copia(libro.getCodice().concat("01"), lib);
 			copie.add(copia);
-			libro.setCopie(copie);
-			copiaRepository.save(copia);
+			lib.setCopie(copie);
+			lib.setNumeroCopie(1);
 			libroRepository.save(lib);
+			copiaRepository.save(copia);
+			//copiaRepository.flush();
+			
+			//libroRepository.flush();
 			return ResponseEntity.ok(new MessageResponse("Nuovo libro: "+ libro + " Copia: " + copia));
 		}
 		
 	}
 	
-	@DeleteMapping("/copia/")
+	@DeleteMapping("/copia")
 	@PreAuthorize("hasRole('ADMIN')")
 	public void rimuoviCopia(@RequestBody String codiceCopia) {
 		if (!libroRepository.existsByCodice(codiceCopia)) {

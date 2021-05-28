@@ -9,9 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
@@ -27,7 +25,7 @@ public class Libro {
 	
 	@NotBlank
 	@Size(min=5, max=7, message="campo obbligatorio di 5 o 7 caratteri")
-	@Column(name="ID_libro")
+	@Column(name="id_libro")
 	private String codice;
 	
 	@Id
@@ -47,10 +45,11 @@ public class Libro {
 	@Column(name="num_copie")
 	private int numeroCopie;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(	name = "libri_copie", 
-				joinColumns = @JoinColumn(name = "id_libro"), 
-				inverseJoinColumns = @JoinColumn(name = "id_copia"))
+	@OneToMany(fetch = FetchType.LAZY,
+			mappedBy = "libroAssociato")
+//	@JoinTable(	name = "libri_copie", 
+//				joinColumns = @JoinColumn(name = "libro_id"), 
+//				inverseJoinColumns = @JoinColumn(name = "copia_id"))
 	private Set<Copia> copie = new HashSet<>();
 	
 
@@ -71,7 +70,7 @@ public class Libro {
 		assert codice == cod:"Il codice deve essere assegnato!";
 		assert titolo == tit:"Il titolo deve essere assegnato!";
 		assert autore == aut:"L'autore deve essere assegnato!";
-		assert numeroCopie == 0:"Il numero delle copie deve essere inizialmente zero";
+		//assert numeroCopie == 0:"Il numero delle copie deve essere inizialmente zero";
 	}
 
 	

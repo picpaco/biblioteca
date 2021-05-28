@@ -4,6 +4,29 @@
   <br/>
 <div class="container">
     <header class="jumbotron">
-      <p>{{ content }}</p>
+    
+      <table id="articoli" class="tabella table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Titolo</th>
+                <th scope="col">Autore</th>
+                <th scope="col">Codice</th>
+                <th scope="col">Copie</th>
+                
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let libro of content">
+              <td scope="row">{{ libro.id }}</td>
+              <td scope="row">{{ libro.titolo }}</td>
+              <td scope="row">{{ libro.autore }}</td>
+              <td scope="row">{{ libro.codice }}</td>
+              <td scope="row">{{ libro.numeroCopie }}</td>
+              
+            </tr>
+        </tbody>
+    </table>
     </header>
   </div>

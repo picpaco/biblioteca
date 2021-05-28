@@ -1,0 +1,22 @@
+<br/>
+<h1>RIMUOVI UNA COPIA</h1>
+<br/>
+<div class="form-group text-center">
+    <div class="immagine"><img style="height: 200px; width: 200px;" src="assets/icon/eliminaLibro.png" alt=""></div>
+    <br/>
+    <form 
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm">
+    <br/>
+    <div class="form-group text-center">
+      <label for="codice">Codice copia</label>
+    
+            <input type="text" class="form-control" placeholder="Inserisci codice libro da eliminare" name="codice" [(ngModel)]="form.codice">
+
+
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Rimuovi</button>
+    </form>
+</div>

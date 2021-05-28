@@ -2,23 +2,28 @@ package com.primas.javaee.bibliotecafinale.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="copie",
 uniqueConstraints = { 
-		@UniqueConstraint(columnNames = "Id_copia") 
+		@UniqueConstraint(columnNames = "id_copia") 
 	})
 public class Copia {
 	
-	@Transient
-   private Libro libroAssociato;
+	//@Transient
+	//@Column(name="libro_associato")
+	 @ManyToOne(fetch = FetchType.LAZY)
+	 @JoinColumn(name = "libro_id")
+     private Libro libroAssociato;
 	
    @Column(name="in_prestito")
 	private boolean isInPrestito;
@@ -28,12 +33,13 @@ public class Copia {
 	private Long id;
    
    @NotBlank
-	@Column(name="Id_copia")
+	@Column(name="id_copia")
 	private String codice;
 	
-   @NotBlank
-   @Column(name="Id_libro")
-	private String codiceLibro;
+ //  @NotBlank
+ //  @ManyToOne(fetch = FetchType.LAZY)
+ //  @JoinColumn(name = "codice")
+//	private String codiceLibro;
 	
 	public boolean isInPrestito() {
 		return isInPrestito;
@@ -58,14 +64,14 @@ public class Copia {
 		assert codice.matches("[a-zA-Z]{5}[0-9]{2}"):"Il codice copia deve essere alfabetico per le prime 5 cifre e numerico per le successive 2 cifre";
 		libroAssociato = lib;
 		this.codice = codice;
-		this.codiceLibro = libroAssociato.getCodice();;
-		assert lib == libroAssociato:"Il libro associato deve essere settato!";
+	//	this.codiceLibro = lib.getCodice();;
+		//assert lib == libroAssociato:"Il libro associato deve essere settato!";
 		assert this.codice == codice:"Il codice copia deve essere settato!";
 	}
 	
 	public String toString(){
 		String statoPrestito = isInPrestito()?" ":" non ";
-		return "La copia " + codice + " del libro: " + libroAssociato + statoPrestito + "e' in prestito"; 
+		return "La copia " + codice + " del libro: " +  statoPrestito + "e' in prestito"; 
 	}
 	
 	
@@ -78,13 +84,13 @@ public class Copia {
 		this.id = id;
 	}
 
-	public String getCodiceLibro() {
+/*	public String getCodiceLibro() {
 		return codiceLibro;
 	}
 
 	public void setCodiceLibro(String codiceLibro) {
 		this.codiceLibro = codiceLibro;
-	}
+	}*/
 
 	public void setLibroAssociato(Libro libroAssociato) {
 		this.libroAssociato = libroAssociato;

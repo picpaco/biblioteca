@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Utente } from '../utente';
 import { UtenteService } from '../_servizi/utente.service';
 
 @Component({
@@ -8,14 +9,17 @@ import { UtenteService } from '../_servizi/utente.service';
 })
 export class BoardAmministratoreComponent implements OnInit {
   
-  content?: any[];
+  //content?: Set<Utente>;
+  content: any;
 
   constructor(private userService: UtenteService) { }
 
   ngOnInit(): void {
-    this.userService.getAdminBoard().subscribe(
+    this.userService.getListaUtenti()
+    .subscribe(
       data => {
-        this.content= Array.of(data);
+        //this.content= Array.of(data);
+        this.content = data;
       },
       err => {
         this.content = JSON.parse(err.error).message;

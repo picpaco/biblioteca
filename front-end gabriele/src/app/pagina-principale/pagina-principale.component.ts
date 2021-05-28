@@ -13,7 +13,7 @@ export class PaginaPrincipaleComponent implements OnInit {
   constructor(private userService: UtenteService) { }
 
   ngOnInit(): void {
-    
+    /*
     this.userService.getPublicContent().subscribe(
       data => {
         this.content = data;
@@ -22,6 +22,7 @@ export class PaginaPrincipaleComponent implements OnInit {
         this.content = JSON.parse(err.error).message;
       }
     );
+    */
     if( window.localStorage )
       {
         if( !localStorage.getItem('firstLoad') )

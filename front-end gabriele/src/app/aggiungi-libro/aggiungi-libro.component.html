@@ -1,0 +1,33 @@
+<br/>
+<h1>AGGIUNGI UN LIBRO</h1>
+<br/>
+<div class="form-group text-center">
+    <div class="immagine rounded mx-auto d-block">
+        <img style="height: 200px; width: 200px;" src="assets/icon/logoLibroTrasparente.png" alt=""></div>
+    <br/>
+    <form 
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm">
+    <br/>
+        <div class="form-group text-center">
+            
+            <label for="codice">Codice</label>
+            <input type="text" class="form-control" placeholder="Inserisci codice libro" maxlength="7" name= "codice" style="text-transform:uppercase"  [(ngModel)]="form.codice">
+
+            <label for="titolo">Titolo</label>
+            <input type="text" class="form-control" placeholder="Inserisci titolo del libro" name="titolo" [(ngModel)]="form.titolo">
+
+            <label for="autore">Autore</label>
+            <input type="text" class="form-control" placeholder="Inserisci autore libro" name="autore" [(ngModel)]="form.autore">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Aggiungi</button>
+
+
+    </form>
+</div>
+<br/>
+<br/>
+<br/>

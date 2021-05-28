@@ -1,4 +1,7 @@
+import { Ruolo } from "./ruolo";
+
 export class Utente{
+
     constructor(
         id : number,
       nome:string,
@@ -7,4 +10,5 @@ export class Utente{
      password:string,
      roles: Set<Ruolo>
     ) { }
+
   }
