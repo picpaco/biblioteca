@@ -1,0 +1,15 @@
+1 - Creare schema come da file application.properties
+2 - Per lanciare il progetto back-end tasto destro sul progetto, cliccare su "run As" e cliccare su "Maven build..."     e scrivere nel campo "Goals" la seguente stringa "spring-boot:run"
+3 - Inseriamo i ruoli nel DB nella tabella ruoli: ROLE_USER e ROLE_ADMIN
+4 - Registrazione dell'utente su Postman usando l'URI /autorizzazione/registrazione in POST
+5 - Accediamo con l'utente su Postamn usando l'URI /autorizzazione/accesso in POST
+6 - Copiare il valore del token che arriva dall riposta di accesso
+7 - Per inserire un nuovo libro usiamo il comando POST e l'URI /libri/aggiungi
+8 - Per autenticare la richiesta usando il token JWT su Postman andiamo su "Authorization" e selezioniaom "Bearer token" e inserire il valore del token copiato al punto 6 nel campo Token sulla destra e infine inserire nel body l'oggetto JSON che di vuole inserire 
+
+   {
+        "codice": "AAAAA",
+        "titolo": "Fattoria",
+        "autore": "Orwell",
+        "numeroCopie" : 1
+    }
