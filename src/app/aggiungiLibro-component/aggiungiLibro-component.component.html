@@ -1,0 +1,29 @@
+<div class="contenitoreForm">
+    <div class="immagine"><img src="assets/icon/logoLibroTrasparente.png" alt=""></div>
+
+    <form [formGroup]="loginform">
+        <div class="classeInput">
+            <h5>Codice</h5>
+            <input type="text" placeholder="Inserisci codice libro" maxlength="7" style="text-transform:uppercase" formControlName="codice" [(ngModel)]="codice2">
+
+        </div>
+        <div class="classeInput">
+            <h5>Titolo</h5>
+            <input type="text" placeholder="Inserisci titolo del libro" formControlName="titolo" [(ngModel)]="titolo2">
+        </div>
+
+        <div class="classeInput">
+            <h5>Autore</h5>
+            <input type="text" placeholder="Inserisci autore libro" formControlName="autore" [(ngModel)]="autore2">
+        </div>
+
+        <div class="classeInput">
+            <h5>Numero copie</h5>
+            <input type="number" placeholder="Inserisci numero copie da aggiungere" formControlName="numeroCopie" [(ngModel)]="numerocopie2">
+        </div>
+
+        <button type="submit" [routerLink]="['/listaLibri']" (click)="aggiungiLibro()">Aggiungi</button>
+
+
+    </form>
+</div>
