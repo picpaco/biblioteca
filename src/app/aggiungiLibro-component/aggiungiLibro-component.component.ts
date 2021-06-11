@@ -16,7 +16,7 @@ export class AggiungiLibroComponentComponent implements OnInit {
 codice2:string='';
 titolo2:string='';
 autore2:string='';
-numerocopie2;
+numerocopie2: number = 0;
 
 loginform= new FormGroup({
   codice: new FormControl('', [Validators.required]),

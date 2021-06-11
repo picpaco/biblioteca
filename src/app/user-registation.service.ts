@@ -20,7 +20,7 @@ export class UserRegistationService {
   }
 
 
-  public login(email, password): Observable<any>{
+  public login(email: string, password: string): Observable<any>{
     return this.http.post("http://localhost:8080/autorizzazione/accesso", {
       email,
       password
@@ -30,11 +30,11 @@ export class UserRegistationService {
     return this.http.get("http://localhost:9090/getAllUsers");
   }
 
-  public getUserByEmail(email){
+  public getUserByEmail(email: string){
     return this.http.get("http://localhost:9090//findUser/"+email);
   }
 
-  public deleteUser(id){
+  public deleteUser(id: string){
     return this.http.delete("http://localhost:9090/cancel/"+id);
   }
 }

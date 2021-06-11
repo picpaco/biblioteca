@@ -35,7 +35,7 @@ public getLibri(){
 //  );
 // }
 
-public aggiungiLibro(codice, titolo, autore, numeroCopie): Observable<any>{
+public aggiungiLibro(codice: string, titolo: string, autore: string, numeroCopie: number): Observable<any>{
 
   return this.http.post("http://localhost:8080/libri/aggiungi",
  {
@@ -51,7 +51,7 @@ numeroCopie
 }
 
 
-rimuoviLibro(Codice){
+rimuoviLibro(Codice: string){
 
 
 

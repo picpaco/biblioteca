@@ -27,7 +27,7 @@ export class ListaUtentiComponentComponent implements OnInit {
     )
   }
 
-  public deleteUser(id){
+  public deleteUser(id: string){
     let resp= this.ServizioRegistrati.deleteUser(id);
     resp.subscribe((data)=>this.arrayUtenti=data);
    }

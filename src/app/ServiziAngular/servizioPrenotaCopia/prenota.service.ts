@@ -9,7 +9,7 @@ export class PrenotaService {
 
 constructor(private http: HttpClient) { }
 
-  prestito(codiceLibro, codiceCopia): Observable<any>{
+  prestito(codiceLibro: string, codiceCopia: string): Observable<any>{
 
     return this.http.put("http://localhost:8080/libri/prestito",
   {

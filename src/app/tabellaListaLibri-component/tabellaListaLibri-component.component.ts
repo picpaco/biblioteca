@@ -33,7 +33,7 @@ export class TabellaListaLibriComponentComponent implements OnInit {
     );
   }
 
-prenotazione(codiceCopia){
+prenotazione(codiceCopia: string){
   const{codice} = this.loginform.value;
   console.log(codiceCopia);
   sessionStorage.setItem("libro.codice", codiceCopia);

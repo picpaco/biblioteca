@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { element } from 'protractor';
 import { Observable } from 'rxjs';
 import { Utenti } from 'src/app/utenti';
 
@@ -12,7 +11,7 @@ import { Utenti } from 'src/app/utenti';
 export class RegistrazioneService {
 constructor(private http:HttpClient) { }
 
-  public inserisciUtente(utente){
+  public inserisciUtente(utente: string){
     return this.http.post("http://localhost:8080/autorizzazione/registrazione",utente,{responseType:'text' as 'json'});
   }
 
@@ -21,13 +20,13 @@ constructor(private http:HttpClient) { }
     return this.http.get("http://localhost:8080/utenti/listaUtenti");
   }
 
-  public deleteUser(id){
+  public deleteUser(id: string){
     return this.http.delete("http://localhost:9090/cancellaUtente/"+id);
   }
 
 
 
-verificaNomeECognome(Nome, Cognome){
+verificaNomeECognome(Nome: string, Cognome: string): boolean{
 
   if ((Nome.length<20 && Nome.length>1) || (Cognome.length<20 && Cognome.length>1) ){
       return true;
@@ -37,7 +36,7 @@ verificaNomeECognome(Nome, Cognome){
     }
 
   }
-  varicaCampiVuoti(Nome, Cognome, Email, password){
+  verificaCampiVuoti(Nome: string, Cognome: string, Email: string, password: string): boolean{
 
 if(Nome=="" || Email=="" || password=="" || Cognome==""){
 return false
