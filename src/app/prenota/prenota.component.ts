@@ -8,7 +8,7 @@ import { PrenotaService } from '../ServiziAngular/servizioPrenotaCopia/prenota.s
   styleUrls: ['./prenota.component.css']
 })
 export class PrenotaComponent implements OnInit {
-  valoreCodiceCopia;
+  valoreCodiceCopia : any;
 
   constructor(private ServizioPrenota:PrenotaService) { }
 

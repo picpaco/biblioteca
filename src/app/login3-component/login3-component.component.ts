@@ -99,14 +99,9 @@ const{email, password} = this.loginform.value;
       return  this.router.navigate(['/login3']);
     }
 
-
   );
 
-
-
-
  }
-
 
 }
 

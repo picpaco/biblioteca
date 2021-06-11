@@ -15,7 +15,7 @@ constructor(private http:HttpClient) {
 
  }
 
-verificaSeVuoti(Email, password){
+verificaSeVuoti(Email: string,password: string){
   if (Email === '' && password === ''){
     return true;
   }else{
