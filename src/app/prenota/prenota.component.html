@@ -1,0 +1,14 @@
+<div class="contenitoreForm">
+    <h3>
+
+
+        Inserisci il codice della copia da prenotare:</h3>
+    <form [formGroup]="loginform" class="form">
+
+        <h5>Codice Copia: {{valoreCodiceCopia}}
+            <input type="text" formControlName="codice" [(ngModel)]="codice2" placeholder="00">
+        </h5>
+
+        <button type="submit " (click)="prenotaCopia()">Prenota</button>
+    </form>
+</div>

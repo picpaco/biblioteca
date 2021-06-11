@@ -1,0 +1,14 @@
+<div class="contenitoreForm">
+    <div class="immagine"><img src="assets/icon/eliminaLibro.png" alt=""></div>
+
+    <form [formGroup]="loginform">
+        <div class="classeInput">
+            <h5>Codice libro</h5>
+            <input type="text" placeholder="Inserisci codice libro da eliminare" formControlName="codice" [(ngModel)]="codice2">
+
+
+        </div>
+
+        <button type="submit" (click)="rimuoviLibro()" routerLink="/listaLibri">Rimuovi</button>
+    </form>
+</div>

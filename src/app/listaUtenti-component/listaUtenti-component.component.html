@@ -1,0 +1,27 @@
+<h1>
+    UTENTI</h1>
+<table id="articoli" class="tabella">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Password</th>
+            <th>Gestisci</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let utente of arrayUtenti">
+            <td>{{utente.id}}</td>
+            <td>{{utente.nome}}</td>
+            <td>{{utente.email}}</td>
+            <td>•••••••••••••••••</td>
+            <td class="text-center">
+                <button class="btn btn-danger btn-xs" (click)="deleteUser(utente.id)">
+                <span class="glyphicon glyphicon-remove"></span>
+                Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
